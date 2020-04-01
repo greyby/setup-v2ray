@@ -23,7 +23,8 @@ You can use `root` user or other user with `sudo` privilege. Download the script
 ```
 wget https://raw.githubusercontent.com/greyby/setup-v2ray/master/setup_v2ray.sh
 chmod +x setup_v2ray.sh
-# vi setup_v2ray.sh, change DOMAIN_NAME
+# vi setup_v2ray.sh, change DOMAIN_NAME  
+# prefer domain.com, not http://domain.com or www.domain.com
 export GD_Key="key_xxxx"
 export GD_Secret="secret_xxxx"
 ./setup_v2ray.sh
