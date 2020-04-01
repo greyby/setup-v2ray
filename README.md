@@ -51,3 +51,4 @@ systemctl restart v2ray.service
 - [ ] More distro support
 - [ ] Check port conflict before install
 - [ ] Request cert with other modes
+- [ ] Refactor duplicate code
