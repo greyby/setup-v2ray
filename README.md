@@ -1,6 +1,5 @@
 # Setup V2Ray
 
-
 Script for automatic setup of V2Ray. Feature of this scrip :
 
 * Install Nginx
@@ -15,7 +14,6 @@ Script for automatic setup of V2Ray. Feature of this scrip :
 Tested on Ubuntu 18.04.4 LTS.
 
 ## How To Use
-
 
 Before you use this script, make sure your domain name resolve to the right IP. Login in your GoDaddy account to get API Key and Secret. https://developer.godaddy.com/keys/
 You can use `root` user or other user with `sudo` privilege. Download the script. You only need to modify the `DOMAIN_NAME`. 
@@ -36,14 +34,13 @@ export GD_Secret="secret_xxxx"
 ## Useful command
 
 ```
-systemctl status nginx.service
-systemctl restart nginx.service
-systemctl status v2ray.service
-systemctl restart v2ray.service
+systemctl status nginx
+systemctl restart nginx
+systemctl status v2ray
+systemctl restart v2ray
 ```
 
 ## TODO
-
 
 - [ ] Cert renew test
 - [ ] Check more exception and handle them
