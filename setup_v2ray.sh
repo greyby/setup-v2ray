@@ -457,7 +457,7 @@ EOF
 check_dns(){
 	colorEcho ${BLUE} "Checking dns..."
 	real_addr=`ping ${DOMAIN_NAME} -c 1 | sed '1{s/[^(]*(//;s/).*//;q}'`
-  local_addr=`curl -s ifconfig.co`
+  local_addr=`curl -s -4 ifconfig.co`
   if [ $real_addr == $local_addr ] ; then
 		colorEcho ${GREEN} "DNS set correct..."
   else
