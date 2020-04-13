@@ -189,7 +189,7 @@ compile_nginx_and_install(){
 	colorEcho ${GREEN} "Finished install nginx."
 }
 
-install_nginx_from_repository(){
+install_nginx_from_apt_repository(){
 	colorEcho ${BLUE} "Preparing install Nginx..."
 	sudo wget -q https://nginx.org/keys/nginx_signing.key
 	sudo apt-key add nginx_signing.key
@@ -549,7 +549,7 @@ main(){
 	check_distribution_support
 	update_package_indexes
 	check_dns
-	install_nginx_from_offical_repository
+	install_nginx_from_apt_repository
 	setup_nginx
 	install_v2ray
 	setup_v2ray
