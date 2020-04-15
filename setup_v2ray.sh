@@ -189,6 +189,7 @@ compile_nginx_and_install(){
 	colorEcho ${GREEN} "Finished install nginx."
 }
 
+# binary_package
 install_nginx_from_apt_repository(){
 	colorEcho ${BLUE} "Preparing install Nginx..."
 	sudo wget -q https://nginx.org/keys/nginx_signing.key
@@ -248,8 +249,6 @@ generate_port_path_and_uuid(){
 
 nginx_config_https(){
 	colorEcho ${BLUE} "Setup Nginx HTTPS config"
-	#TODO cert
-	curl -s https://ssl-config.mozilla.org/ffdhe2048.txt > /etc/nginx/certs/dhparam.pem
 	sudo bash -c "cat > /etc/nginx/conf.d/default.conf" <<EOF
 server {
   listen 443 ssl http2;
@@ -335,7 +334,8 @@ install_cert(){
 	sudo apt-get install -y -q socat > /dev/null
 	sudo mkdir -p /etc/nginx/certs
 	sudo chown -R ${APP_USER}:${APP_GROUP} /etc/nginx/certs
-
+	#TODO cert
+	curl -s https://ssl-config.mozilla.org/ffdhe2048.txt > /etc/nginx/certs/dhparam.pem
 	curl -s https://get.acme.sh | sh
 	# different DNS API
 	#TODO check acme.sh return value
