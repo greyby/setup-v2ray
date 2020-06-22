@@ -194,8 +194,8 @@ install_nginx_from_apt_repository(){
 	colorEcho ${BLUE} "Preparing install Nginx..."
 	sudo wget -q https://nginx.org/keys/nginx_signing.key
 	sudo apt-key add nginx_signing.key
-	sudo echo "deb https://nginx.org/packages/mainline/ubuntu/ ${CODENAME} nginx" >> /etc/apt/sources.list
-	sudo echo "deb-src https://nginx.org/packages/mainline/ubuntu/ ${CODENAME} nginx" >> /etc/apt/sources.list
+	sudo -E bash -c 'echo -e "deb https://nginx.org/packages/mainline/ubuntu/ ${CODENAME} nginx" >> /etc/apt/sources.list'
+	sudo -E bash -c 'echo -e "deb-src https://nginx.org/packages/mainline/ubuntu/ ${CODENAME} nginx" >> /etc/apt/sources.list'
 	sudo rm nginx_signing.key
 	update_package_indexes
 	sudo apt-get install -y -q nginx > /dev/null
