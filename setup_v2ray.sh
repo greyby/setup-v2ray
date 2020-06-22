@@ -148,7 +148,7 @@ download_nginx(){
 
 update_package_indexes(){
 	colorEcho ${BLUE} "Resynchronize package index files..."
-	sudo apt-get update -y -q  > /dev/null 
+	sudo apt-get update -y -q  > /dev/null
 	# && sudo apt-get upgrade -y -q > /dev/null
 }
 
@@ -198,7 +198,7 @@ install_nginx_from_apt_repository(){
 	sudo echo "deb-src https://nginx.org/packages/mainline/ubuntu/ ${CODENAME} nginx" >> /etc/apt/sources.list
 	sudo rm nginx_signing.key
 	update_package_indexes
-	sudo apt-get install nginx
+	sudo apt-get install -y -q nginx > /dev/null
 	colorEcho ${GREEN} "Finished install Nginx..."
 }
 
