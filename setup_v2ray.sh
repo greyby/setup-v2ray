@@ -100,7 +100,7 @@ check_distribution_support(){
 
 download_nginx(){
 	colorEcho ${BLUE} "Preparing download..."
-	sudu rm -rf ${PACKAGE_PATH}
+	sudo rm -rf ${PACKAGE_PATH}
   mkdir -p ${PACKAGE_PATH}
   cd ${PACKAGE_PATH}
 
